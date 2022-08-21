@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import Input1 from './componentes/Input1';
+
+
 
 function App() {
+  const [nombre, setNombre] = useState('');
+  const [contraseña, setContraseña] = useState('');
+  const [error, setError] = useState(true);
+
   return (
     <div className="App">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Desafío estado de los componentes y eventos</h1>
       </header>
+
+      <form className="formulario">
+        
+          <Input1
+          nombre = {nombre}
+          setNombre = {setNombre}
+          contraseña = {contraseña}
+          setContraseña = {setContraseña}
+          error = {error}
+          setError = {setError}
+          />
+        
+   
+      </form>
     </div>
   );
 }
